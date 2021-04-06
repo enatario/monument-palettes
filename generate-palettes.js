@@ -4,20 +4,40 @@ const path = require("path");
 const rgbhex = require("rgb-hex");
 
 const folder = "./source-images/";
-const paletteSize = 5;
+const filePaths = fs.readdirSync(folder, []);
+const defaultPaletteSize = 5;
 
-fs.readdir(folder, (err, files) => {
-  files.forEach(file => {
-    const img = (path.join(folder, file));
-    colorthief.getPalette(img, paletteSize)
-      .then(colors => {
-        colors.forEach(color => {
-          const palette = color.join();
-          console.log(file, rgbhex(palette));
-        });
-      })
-      .catch(err => { console.log(err);});
+const extractColors = async(dir, paletteSize) => {
+  const rgbColors = await colorthief.getPalette(dir, paletteSize | defaultPaletteSize);
+  const hexColors = rgbColors.map((color) => rgbhex(color.join()));
+  return hexColors;
+};
+
+const paths = () => {
+  let files = [];
+  filePaths.map(file => {
+    const imgPath = (path.join(folder, file));
+    files.push(imgPath);
   });
-});
+  return files;
+};
+
+const mapData = async() => {
+  const files = await paths();
+  let data = await Promise.all(files.map(async file => {
+    let palette = await extractColors(file);
+    file = path.basename(file, ".jpg");
+    let obj = {id: file, colors: palette};
+    return obj;
+  }));
+  return data;
+};
+
+const init = async() => {
+  let json = JSON.stringify(await mapData());
+  fs.writeFileSync("./src/_data/palettes.json", json);
+};
+
+init();
 
 
