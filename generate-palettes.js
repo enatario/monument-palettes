@@ -1,10 +1,9 @@
 const colorthief = require("colorthief");
-const fs = require("fs");
 const path = require("path");
+const fs = require("fs");
 const rgbhex = require("rgb-hex");
 
-const folder = "./source-images/";
-const filePaths = fs.readdirSync(folder, []);
+const sourceFolder = "./source-images/";
 const defaultPaletteSize = 5;
 
 const extractColors = async(dir, paletteSize) => {
@@ -13,31 +12,37 @@ const extractColors = async(dir, paletteSize) => {
   return hexColors;
 };
 
-const paths = () => {
-  let files = [];
-  filePaths.map(file => {
-    const imgPath = (path.join(folder, file));
-    files.push(imgPath);
+const getImagePaths = (directory) => {
+  let imagePaths = [];
+  const imageDirectory = fs.readdirSync(directory, []);
+  imageDirectory.map(imagePath => {
+    imagePaths.push(path.join(directory, imagePath));
   });
-  return files;
+  return imagePaths;
 };
 
-const mapData = async() => {
-  const files = await paths();
-  let data = await Promise.all(files.map(async file => {
-    let palette = await extractColors(file);
-    file = path.basename(file, ".jpg");
-    let obj = {id: file, colors: palette};
-    return obj;
+const getPalettes = async(directory) => {
+  const imageFiles = await getImagePaths(directory);
+  let palette = await Promise.all(imageFiles.map(async file => {
+    return await extractColors(file);
+  }));
+  return palette;
+};
+
+const mapData = async(sourceDirectory) => {
+  const sourcePaths = fs.readdirSync(sourceDirectory, []);
+  let data = await await Promise.all(sourcePaths.map(async sourcePath => {
+    const folders = path.join(sourceDirectory, sourcePath);
+    const name = sourcePath.substring(sourcePath.indexOf("-") + 1).trim();
+    const palettes = await getPalettes(folders);
+    return {name, id: sourcePath, palettes};
   }));
   return data;
 };
 
 const init = async() => {
-  let json = JSON.stringify(await mapData());
-  fs.writeFileSync("./src/_data/palettes.json", json);
+  const json = JSON.stringify(await mapData(sourceFolder));
+  fs.writeFileSync("./src/_data/data.json", json);
 };
 
 init();
-
-

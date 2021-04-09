@@ -2,9 +2,16 @@
 layout: layouts/base.njk
 ---
 
-<h1>Hello world</h1>
+<h1>Monument Palettes</h1>
 
-{% for palette in palettes %}
-  <p>{{ palette.id }}</p>
-  <p>{{ palette.colors }}</p>
+{% for chapter in data %}
+  <h2>Chapter {{ loop.index }}</h2>
+  <h3>{{ chapter.name }}</h3>
+  {% for palette in chapter.palettes %}
+    <div style="display: flex; margin: 1rem 0;">
+    {% for color in palette %}
+      <div style="width:1rem; height: 1rem; background-color:#{{ color }};"></div>
+    {% endfor %}
+    </div>
+  {% endfor %}
 {% endfor %}
