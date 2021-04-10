@@ -21,21 +21,13 @@ const getImagePaths = (directory) => {
   return imagePaths;
 };
 
-const getPalettes = async(directory) => {
-  const imageFiles = await getImagePaths(directory);
-  let palette = await Promise.all(imageFiles.map(async file => {
-    return await extractColors(file);
-  }));
-  return palette;
-};
-
-const mapData = async(sourceDirectory) => {
-  const sourcePaths = fs.readdirSync(sourceDirectory, []);
-  let data = await await Promise.all(sourcePaths.map(async sourcePath => {
-    const folders = path.join(sourceDirectory, sourcePath);
-    const name = sourcePath.substring(sourcePath.indexOf("-") + 1).trim();
-    const palettes = await getPalettes(folders);
-    return {name, id: sourcePath, palettes};
+const mapData = async(directory) => {
+  const files = await getImagePaths(directory);
+  let data = await Promise.all(files.map(async file => {
+    let palette = await extractColors(file);
+    file = path.basename(file, ".png");
+    const name = file.substring(file.indexOf("-") + 1).trim();
+    return {name, palette};
   }));
   return data;
 };

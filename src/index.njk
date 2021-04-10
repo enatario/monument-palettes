@@ -1,23 +1,26 @@
 ---
 layout: layouts/base.njk
 ---
-
-{% for chapter in data %}
+{% for name, chapter in data | groupby("name") %}
 <section class="chapter">
   <h2 class="chapter__number">Chapter {{ loop.index }}</h2>
-  <h3 class="chapter__title">{{ chapter.name }}</h3>
+  <h3 class="chapter__title">{{ name }}</h3>
   <ul class="chapter__palettes">
-    {% for palette in chapter.palettes %}
+  {% set slug = name | slug %}
+    {% for palettes in chapter %}
+    {% set paletteloop = loop %}
     <li>
       <ul class="palette">
-      {% for color in palette %}
-      <li class="palette__item">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-labelledby="color-{{ loop.index }}" fill="#{{ color }}">
-          <circle cx="50" cy="50" r="50"/>
-        </svg>
-        {# <div class="palette__color" style="background-color:#{{ color }};"></div> #}
-        <p class="palette__value">#{{ color }}</p>
-      </li>
+      {% for color in palettes.palette %}
+      {% set id %}
+        {{ slug }}-palette{{ paletteloop.index}}-color{{ loop.index }}
+      {% endset %}
+        <li class="palette__item">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-labelledby="{{ id }}" fill="#{{ color }}">
+            <circle cx="50" cy="50" r="50"/>
+          </svg>
+          <p id="{{ id }}" class="palette__value">#{{ color }}</p>
+        </li>
       {% endfor %}
       </ul>
     </li>
