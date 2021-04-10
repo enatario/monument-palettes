@@ -2,16 +2,26 @@
 layout: layouts/base.njk
 ---
 
-<h1>Monument Palettes</h1>
-
 {% for chapter in data %}
-  <h2>Chapter {{ loop.index }}</h2>
-  <h3>{{ chapter.name }}</h3>
-  {% for palette in chapter.palettes %}
-    <div style="display: flex; margin: 1rem 0;">
-    {% for color in palette %}
-      <div style="width:1rem; height: 1rem; background-color:#{{ color }};"></div>
+<section class="chapter">
+  <h2 class="chapter__number">Chapter {{ loop.index }}</h2>
+  <h3 class="chapter__title">{{ chapter.name }}</h3>
+  <ul class="chapter__palettes">
+    {% for palette in chapter.palettes %}
+    <li>
+      <ul class="palette">
+      {% for color in palette %}
+      <li class="palette__item">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-labelledby="color-{{ loop.index }}" fill="#{{ color }}">
+          <circle cx="50" cy="50" r="50"/>
+        </svg>
+        {# <div class="palette__color" style="background-color:#{{ color }};"></div> #}
+        <p class="palette__value">#{{ color }}</p>
+      </li>
+      {% endfor %}
+      </ul>
+    </li>
     {% endfor %}
-    </div>
-  {% endfor %}
+  </ul>
+</section>
 {% endfor %}
