@@ -1,48 +1,47 @@
-# Eleventy base
-A foundational static site generator using [11ty].
+# Monument Palettes
+Color palettes from the [Monument Valley I] game.
 
-Includes:
-* SCSS
-* Javascript modules
-* CSS and JS linting
-* Netlify deployment
+**Palettes coming soon:**
+* Forgotten Shores
+* Ida's Dream
+* Monument Valley II
 
-## Pre-requisites
+## What's inside
+This project uses [colorthief] to generate palettes from a set of images. This site runs using [11ty] and [Netlify]. The base template uses my own [11ty scaffold], which you are welcome to use for your own projects.
+
+## Make your own palette site!
+The guts of this project are very much extendable for your own palette site. Here's what you need to know:
+
+### Prequisites
 * [Node]
 * A general understanding of [11ty]
+* Probably some working knowledge of CSS (with [SCSS]), JS, and HTML (with [Nunjucks])
 
-## Setup
-* Use [this template][template] to generate a version in your own Github repo, or clone this locally and manually add to your remote repo.
-* Run `npm i`
+### Get started
+* Clone this repo: `git clone git@github.com:enatario/monument-palettes.git`
+* Pop into your cloned project: `cd monument-palettes`
+* Install packages: `npm i`
 
-## Run locally
+### Run locally
 * Run `npm start`
 * View your project on`localhost:8080`
 
-## Where stuff lives
-* Work in the `src` folder unless you need to adjust development configurations in `.eleventy.js` `package.json` or any other root file.
-* SCSS lives in the `css` folder and processes to `app.css` in the `dist` folder.
-* JS lives in the `js` folder and processes to `app.js` in the `dist` folder.
-* The `static` folder is for images, fonts, and other media.
-* `index.njk` is your root page. You can add other partials to this. And make sub-pages. Read up on [Nunjucks] and [11ty collections][collections].
-  * You can change to [any other templating language][template-lang] that 11ty supports if you don't want to work in njk.
-* Data can be passed to njk files and is stored in the `_data` folder. Currently the only file there is `metadata.json` that is being passed into the `head` in `_includes/layouts/base.njk`.
-  * Read up on [frontmatter] to pass data to your templates within each page.
+### Generate your own palettes
+* Delete all of the images from `./source-images/` and put in your own images
+* Run `node generate-palettes.js`
+* View your json file in `./src/_data/data.json`
 
-## Build
-* Run `npm run build`
-* All build files should end up in the `dist` folder
+#### Tweak the output
+* Change the number of colors generated per palette by changing the number on the `defaultPaletteSize` constant in `./generate-palettes.js`
+  * If you read up on the docs, you can make lots of other adjustments you can make to how [colorthief] analyzes an image.
+* Change the loops and general architecture of the page in `./src/index.njk`
+* Change the overall styling of the page in `./src/css`
 
-## Deploy
-[Deploy to Netlify using this template][deploy-to-netlify] or manually connect to your Netlify account with the repository you've set up. The configuration lives in `netlify.toml` and you can make it fancier if you like.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)][deploy-to-netlify]
-
+[Monument Valley I]: https://www.monumentvalleygame.com/mv1
+[colorthief]: https://lokeshdhakar.com/projects/color-thief/
 [11ty]: https://www.11ty.dev/
+[Netlify]: https://www.netlify.com/
+[11ty scaffold]: https://github.com/enatario/eleventy-base
 [Node]: https://nodejs.org/
-[template]: https://github.com/enatario/eleventy-base/generate
+[SCSS]: https://sass-lang.com/
 [Nunjucks]: https://mozilla.github.io/nunjucks/
-[collections]: https://www.11ty.dev/docs/collections/
-[template-lang]: https://www.11ty.dev/docs/languages/
-[frontmatter]: https://www.11ty.dev/docs/data-frontmatter/
-[deploy-to-netlify]: https://app.netlify.com/start/deploy?repository=https://github.com/enatario/eleventy-base
