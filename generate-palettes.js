@@ -6,10 +6,14 @@ const rgbhex = require("rgb-hex");
 const sourceFolder = "./source-images/";
 const defaultPaletteSize = 5;
 
-const extractColors = async(dir, paletteSize) => {
-  const rgbColors = await colorthief.getPalette(dir, paletteSize | defaultPaletteSize);
-  const hexColors = rgbColors.map((color) => rgbhex(color.join()));
-  return hexColors;
+const extractColors = async(image, paletteSize) => {
+  try {
+    const rgbColors = await colorthief.getPalette(image, paletteSize | defaultPaletteSize);
+    const hexColors = rgbColors.map((color) => rgbhex(color.join()));
+    return hexColors;
+  } catch (e) {
+    console.error(`${image} is not a valid image type`);
+  }
 };
 
 const getImagePaths = (directory) => {
@@ -21,12 +25,15 @@ const getImagePaths = (directory) => {
   return imagePaths;
 };
 
+const cleanFileName = (file) => {
+  return file.replace(/^.*-|\.[^.]*$/g, "");
+};
+
 const mapData = async(directory) => {
   const files = await getImagePaths(directory);
   let data = await Promise.all(files.map(async file => {
-    let palette = await extractColors(file);
-    file = path.basename(file, ".png");
-    const name = file.substring(file.indexOf("-") + 1).trim();
+    const palette = await extractColors(file);
+    const name = cleanFileName(file);
     return {name, palette};
   }));
   return data;
@@ -34,7 +41,12 @@ const mapData = async(directory) => {
 
 const init = async() => {
   const json = JSON.stringify(await mapData(sourceFolder));
-  fs.writeFileSync("./src/_data/data.json", json);
+  try {
+    fs.writeFileSync("./src/_data/data.json", json);
+    console.log("data.json is now available");
+  } catch (e) {
+    console.error(e);
+  }
 };
 
 init();

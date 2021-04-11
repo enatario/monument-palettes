@@ -33,7 +33,9 @@ The guts of this project are very much extendable for your own palette site. Her
 
 #### Tweak the output
 * Change the number of colors generated per palette by changing the number on the `defaultPaletteSize` constant in `./generate-palettes.js`
-  * If you read up on the docs, you can make lots of other adjustments you can make to how [colorthief] analyzes an image.
+  * The [colorthief API] will show you further optimizations you can make to adjust your palette output.
+  * The function `cleanFileName` essentially gets the basename of my image file and also trims off the numbers in it so I can use it as a chapter name in my json. You may or may not need this. If you do, you'll wanna look into [RegEx] to clean up your file names (or use a javascript method to clean the name to your liking).
+    * E.g. `source-images/02.1-The Garden.png` becomes `The Garden`
 * Change the loops and general architecture of the page in `./src/index.njk`
 * Change the overall styling of the page in `./src/css`
 
@@ -45,3 +47,5 @@ The guts of this project are very much extendable for your own palette site. Her
 [Node]: https://nodejs.org/
 [SCSS]: https://sass-lang.com/
 [Nunjucks]: https://mozilla.github.io/nunjucks/
+[colorthief API]: https://lokeshdhakar.com/projects/color-thief/#api
+[RegEx]: https://regexr.com/
