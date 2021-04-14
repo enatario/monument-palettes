@@ -1,0 +1,12 @@
+$bourbon: (
+  "global-font-file-formats": ("woff2"),
+);
+
+$dir-font: "/static/fonts/";
+
+:root {
+  --font-family--base: "Museo", sans-serif;
+
+  --line-height--base: 1.5;
+  --line-height--tight: 1.1;
+}

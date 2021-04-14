@@ -5,8 +5,13 @@
 // Dependencies
 @import "bourbon/core/bourbon";
 
+// Base Dependencies
+@import "base/variables";
+@import "base/fonts";
+
 // Base
 @import "base/lists";
+@import "base/typography";
 
 // Components
 @import "components/palette";
