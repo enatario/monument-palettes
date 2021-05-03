@@ -1,20 +1,28 @@
 .palette {
-  display: grid;
-  grid-auto-flow: column;
-  grid-column-gap: 1rem;
-  justify-content: start;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 9px 9px 0px 0px #efe5e2;
+  overflow: hidden;
 }
 
 .palette__item {
+  border-radius: 5px;
   display: grid;
-  grid-row-gap: 0.5rem;
-  // grid-template-rows: minmax(7rem, 1fr) auto;
+  grid-template-columns: 1fr minmax(0, 4.5rem);
 }
 
 .palette__color {
-  // border-radius: 2rem;
+  width: 100%;
 }
 
 .palette__value {
+  color: #484846;
+  font-size: 0.8rem;
+  font-weight: 700;
   margin: 0;
+  padding: 0.5rem;
+}
+
+.palette__item:not(:last-of-type) .palette__value {
+  border-bottom: 3px solid #f9f1ef;
 }

@@ -5,8 +5,16 @@ $bourbon: (
 $dir-font: "/static/fonts/";
 
 :root {
+  --color--blush: #f9f1ef;
+  --color--bg: var(--color--blush);
+
   --font-family--base: "Museo", sans-serif;
+
+  --font-weight--normal: 300;
+  --font-weight--bold: 700;
 
   --line-height--base: 1.5;
   --line-height--tight: 1.1;
+
+  --container--base: 70rem;
 }

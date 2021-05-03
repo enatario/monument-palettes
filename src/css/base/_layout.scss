@@ -1,0 +1,30 @@
+body {
+  grid-column-gap: 2rem;
+  grid-template-columns: 1fr 3fr;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: var(--container--base);
+  padding: 1rem;
+
+  @media screen and (min-width: 35rem) {
+    display: grid;
+    padding: 3rem 1rem;
+  }
+}
+
+main {
+  display: grid;
+  grid-row-gap: 5rem;
+}
+
+body > header {
+
+  @media screen and (min-width: 35rem) {
+    align-self: start;
+    justify-self: end;
+    max-width: 20ch;
+    position: sticky;
+    text-align: right;
+    top: 1rem;
+  }
+}

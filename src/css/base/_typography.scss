@@ -7,3 +7,24 @@ body {
   font-family: var(--font-family--base);
   line-height: var(--line-height--base);
 }
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+h2 {
+  font-size: 0.7rem;
+  font-weight: var(--font-weight--normal);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,9 @@
+.chapter__header {
+  margin-bottom: 0.5rem;
+}
+
+.chapter__palettes {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+}
