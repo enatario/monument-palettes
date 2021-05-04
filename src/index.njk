@@ -18,8 +18,8 @@ layout: layouts/base.njk
         {{ slug }}-palette{{ paletteloop.index}}-color{{ loop.index }}
       {% endset %}
         <li class="palette__item">
-          <div class="palette__color" style="background-color: #{{ color }};" aria-labelledby="{{ id }}"></div>
-          <p id="{{ id }}" class="palette__value"><span>#</span>{{ color }}</p>
+          <div class="palette__color" style="background-color: #{{ color.hex }};" aria-labelledby="{{ id }}"></div>
+          <p id="{{ id }}" class="palette__value" data-hex-value="{{ color.hex }}" data-rgb-value="{{ color.rgb }}">#<span>{{ color.hex }}</span></p>
         </li>
       {% endfor %}
       </ul>

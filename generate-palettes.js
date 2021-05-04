@@ -9,8 +9,12 @@ const defaultPaletteSize = 5;
 const extractColors = async(image, paletteSize) => {
   try {
     const rgbColors = await colorthief.getPalette(image, paletteSize | defaultPaletteSize);
-    const hexColors = rgbColors.map((color) => rgbhex(color.join()));
-    return hexColors;
+    let colors = rgbColors.map(color => {
+      const rgb = color.join();
+      const hex = rgbhex(rgb);
+      return {rgb, hex};
+    });
+    return colors;
   } catch (e) {
     console.error(`${image} is not a valid image type`);
   }

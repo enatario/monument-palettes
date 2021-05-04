@@ -8,7 +8,7 @@
 .palette__item {
   border-radius: 5px;
   display: grid;
-  grid-template-columns: 1fr minmax(0, 4.5rem);
+  grid-template-columns: 1fr 1fr;
 }
 
 .palette__color {
@@ -16,15 +16,15 @@
 }
 
 .palette__value {
-  color: #484846;
+  color: #9e9494;
   font-size: 0.8rem;
-  font-weight: bold;
+  font-weight: normal;
   margin: 0;
   padding: 0.5rem;
 
   span {
-    color: #9e9494;
-    font-weight: normal;
+    color: #484846;
+    font-weight: bold;
   }
 }
 
