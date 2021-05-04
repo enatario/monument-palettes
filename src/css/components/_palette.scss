@@ -18,9 +18,14 @@
 .palette__value {
   color: #484846;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: bold;
   margin: 0;
   padding: 0.5rem;
+
+  span {
+    color: #9e9494;
+    font-weight: normal;
+  }
 }
 
 .palette__item:not(:last-of-type) .palette__value {

@@ -1,11 +1,17 @@
-@include font-face("Museo", $dir-font + "museosans-300") {
+@include font-face("Museo", $dir-font + "museoslab-300") {
   font-display: swap;
   font-style: normal;
-  font-weight: 300;
+  font-weight: normal;
 }
 
-@include font-face("Museo", $dir-font + "museosans-700") {
+@include font-face("Museo", $dir-font + "museoslab-500") {
   font-display: swap;
   font-style: normal;
-  font-weight: 700;
+  font-weight: bold;
 }
+
+// @include font-face("Museo", $dir-font + "museosans-700") {
+//   font-display: swap;
+//   font-style: normal;
+//   font-weight: 700;
+// }

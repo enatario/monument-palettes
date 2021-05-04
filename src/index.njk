@@ -19,7 +19,7 @@ layout: layouts/base.njk
       {% endset %}
         <li class="palette__item">
           <div class="palette__color" style="background-color: #{{ color }};" aria-labelledby="{{ id }}"></div>
-          <p id="{{ id }}" class="palette__value">#{{ color }}</p>
+          <p id="{{ id }}" class="palette__value"><span>#</span>{{ color }}</p>
         </li>
       {% endfor %}
       </ul>
