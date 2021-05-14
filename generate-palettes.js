@@ -10,7 +10,7 @@ const extractColors = async(image, paletteSize) => {
   try {
     const rgbColors = await colorthief.getPalette(image, paletteSize | defaultPaletteSize);
     let colors = rgbColors.map(color => {
-      const rgb = color.join();
+      const rgb = color.join(", ");
       const hex = rgbhex(rgb);
       return {rgb, hex};
     });

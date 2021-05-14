@@ -1,13 +1,13 @@
 body {
-  grid-column-gap: 2rem;
-  grid-template-columns: 1fr 3fr;
+  display: grid;
+  grid-gap: 3rem;
   justify-content: center;
   margin: 0 auto;
   max-width: var(--container--base);
-  padding: 1rem;
+  padding: var(--space--base);
 
   @media screen and (min-width: 35rem) {
-    display: grid;
+    grid-template-columns: 1fr 3fr;
     padding: 3rem 1rem;
   }
 }
@@ -24,7 +24,6 @@ body > header {
     justify-self: end;
     max-width: 20ch;
     position: sticky;
-    text-align: right;
-    top: 1rem;
+    top: var(--space--base);
   }
 }

@@ -5,7 +5,16 @@ $bourbon: (
 $dir-font: "/static/fonts/";
 
 :root {
+  --color--white: #ffffff;
   --color--blush: #f9f1ef;
+  --color--blush--dark: #f9f1ef;
+  --color--blush--darker: #efe5e2;
+  --color--blush--darkest: #e5d4cf;
+  --color--olive: #59594a;
+  --color--olive--dark: #4b4b45;
+
+  --color--text: var(--color--olive--dark);
+  --color--text--light: var(--color--olive);
   --color--bg: var(--color--blush);
 
   --font-family--base: "Museo", sans-serif;
@@ -14,4 +23,12 @@ $dir-font: "/static/fonts/";
   --line-height--tight: 1.1;
 
   --container--base: 70rem;
+
+  --space--xsmall: 0.25rem;
+  --space--small: 0.5rem;
+  --space--base: 1rem;
+
+  --border-radius--base: 5px;
+
+  --transition-timing--base: 0.2s;
 }

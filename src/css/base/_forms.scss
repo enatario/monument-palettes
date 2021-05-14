@@ -1,0 +1,61 @@
+fieldset {
+  background-color: var(--color--blush--darker);
+  border: 0;
+  border-radius: var(--border-radius--base);
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: var(--space--small);
+  padding: var(--space--small);
+  width: fit-content;
+}
+
+legend {
+  @include hide-visually;
+}
+
+[type="radio"] {
+  @include hide-visually;
+}
+
+[type="radio"] + label {
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: grid;
+  font-size: 0.9rem;
+  font-weight: bold;
+  grid-auto-columns: min-content auto;
+  grid-auto-flow: column;
+  grid-gap: var(--space--xsmall);
+  justify-content: center;
+  padding: var(--space--xsmall);
+
+  &::before {
+    border: 2px solid #c5b4af;
+  }
+
+  &::after {
+    transform: scale(0.5  );
+  }
+
+  &::before,
+  &::after {
+    @include size(1rem);
+
+    background-color: transparent;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    place-self: center;
+  }
+}
+
+[type="radio"]:checked+label::after {
+  background-color: #c5b4af;
+}
+
+[type="radio"]:focus + label {
+  border: 2px solid #c5b4af;
+  border-radius: var(--border-radius--base);
+}

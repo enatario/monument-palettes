@@ -9,7 +9,7 @@ const convertColorValues = (value) => {
     if (value === "rgb") {
       element.innerHTML = `rgb(<span>${colorValue}</span>)`;
     } else {
-      element.innerHTML = `#<span>${colorValue}</span>`; 
+      element.innerHTML = `#<span>${colorValue}</span>`;
     }
   });
 };

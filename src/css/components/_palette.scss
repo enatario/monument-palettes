@@ -1,14 +1,21 @@
 .palette {
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 9px 9px 0px 0px #efe5e2;
+  --color--box-shadow: var(--color--blush--darker);
+
+  background-color: var(--color--white);
+  border-radius: var(--border-radius--base);
+  box-shadow: var(--space--small) var(--space--small) 0 0 var(--color--box-shadow);
   overflow: hidden;
+  transition: box-shadow 0.25s ease-in-out;
+
+  &:hover {
+    --color--box-shadow: var(--color--blush--darkest);
+  }
 }
 
 .palette__item {
-  border-radius: 5px;
+  border-radius: var(--border-radius--base);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.25fr;
 }
 
 .palette__color {
@@ -16,18 +23,18 @@
 }
 
 .palette__value {
-  color: #9e9494;
+  color: var(--color--olive);
   font-size: 0.8rem;
   font-weight: normal;
   margin: 0;
-  padding: 0.5rem;
+  padding: var(--space--small);
 
   span {
-    color: #484846;
+    color: var(--color--olive--dark);
     font-weight: bold;
   }
 }
 
 .palette__item:not(:last-of-type) .palette__value {
-  border-bottom: 3px solid #f9f1ef;
+  border-bottom: 3px solid var(--color--blush--dark);
 }

@@ -1,3 +1,16 @@
 body {
   background-color: var(--color--bg);
+  color: var(--color--text);
+}
+
+a {
+  color: var(--color--text);
+  font-weight: bold;
+  text-decoration-color: var(--color--blush--darkest);
+  text-decoration-thickness: 2px;
+  transition: text-decoration-color var(--transition-timing--base) ease-in-out;
+
+  &:hover {
+    text-decoration-color: var(--color--olive);
+  }
 }
