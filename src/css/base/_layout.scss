@@ -1,29 +1,49 @@
 body {
   display: grid;
-  grid-gap: 3rem;
-  justify-content: center;
   margin: 0 auto;
-  max-width: var(--container--base);
-  padding: var(--space--base);
 
-  @media screen and (min-width: 35rem) {
-    grid-template-columns: 1fr 3fr;
-    padding: 3rem 1rem;
+  @media screen and (min-width: #{$breakpoint}) {
+    grid-template-columns: 1fr 5fr;
+    justify-content: center;
   }
 }
 
 main {
   display: grid;
-  grid-row-gap: 5rem;
+  grid-row-gap: 2.5rem;
+  padding: 2.5rem;
+
+  @media screen and (min-width: #{$breakpoint}) {
+    order: 2;
+  }
 }
 
 body > header {
+  background-color: var(--color--white);
+  padding: 2.5rem;
+  position: sticky;
 
-  @media screen and (min-width: 35rem) {
-    align-self: start;
-    justify-self: end;
-    max-width: 20ch;
-    position: sticky;
-    top: var(--space--base);
+  @media screen and (min-width: #{$breakpoint}) {
+    height: 100vh;
+    order: 1;
+    top: 0;
+  }
+}
+
+body > footer {
+  order: 3;
+  padding: 2.5rem;
+  position: relative;
+
+  @media screen and (min-width: #{$breakpoint}) {
+    grid-column-start: 2;
+  }
+}
+
+.color-selector {
+  @include position(fixed, null 1rem 1rem null);
+
+  @media screen and (min-width: #{$breakpoint}) {
+    position: static;
   }
 }

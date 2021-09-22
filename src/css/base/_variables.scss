@@ -4,6 +4,8 @@ $bourbon: (
 
 $dir-font: "/static/fonts/";
 
+$breakpoint: 35rem;
+
 :root {
   --color--white: #ffffff;
   --color--blush: #f9f1ef;
@@ -27,6 +29,9 @@ $dir-font: "/static/fonts/";
   --space--xsmall: 0.25rem;
   --space--small: 0.5rem;
   --space--base: 1rem;
+  --space--medium: 1.5rem;
+  --space--large: 3rem;
+  --space--x-large: 5rem;
 
   --border-radius--base: 5px;
 

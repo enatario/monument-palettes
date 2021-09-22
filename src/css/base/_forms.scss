@@ -1,11 +1,10 @@
 fieldset {
-  background-color: var(--color--blush--darker);
   border: 0;
   border-radius: var(--border-radius--base);
   display: grid;
   grid-auto-flow: column;
   grid-column-gap: var(--space--small);
-  padding: var(--space--small);
+  padding: 0;
   width: fit-content;
 }
 
@@ -18,23 +17,20 @@ legend {
 }
 
 [type="radio"] + label {
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   cursor: pointer;
   display: grid;
-  font-size: 0.9rem;
-  font-weight: bold;
   grid-auto-columns: min-content auto;
   grid-auto-flow: column;
   grid-gap: var(--space--xsmall);
   justify-content: center;
-  padding: var(--space--xsmall);
 
   &::before {
     border: 2px solid #c5b4af;
   }
 
   &::after {
-    transform: scale(0.5  );
+    transform: scale(0.5);
   }
 
   &::before,
@@ -56,6 +52,6 @@ legend {
 }
 
 [type="radio"]:focus + label {
-  border: 2px solid #c5b4af;
+  background-color: var(--color--white);
   border-radius: var(--border-radius--base);
 }
