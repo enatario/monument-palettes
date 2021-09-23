@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 ---
 {% for name, chapter in data | groupby("name") %}
-<section class="chapter">
+<section class="chapter" id="{{ name | slug }}">
   <header class="chapter__header">
     <h2 class="chapter__number">Chapter {{ loop.index | romanize }}</h2>
     <h3 class="chapter__title">{{ name }}</h3>

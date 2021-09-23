@@ -31,6 +31,9 @@ body > header {
 }
 
 body > footer {
+  display: grid;
+  grid-gap: var(--space--medium);
+  grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
   order: 3;
   padding: 2.5rem;
   position: relative;
