@@ -22,7 +22,7 @@ h1 {
 h2 {
   align-items: center;
   display: grid;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: normal;
   grid-gap: 1rem;
   grid-template-columns: auto 1fr;
@@ -38,4 +38,8 @@ p,
 legend,
 label, {
   font-size: 0.8rem;
+}
+
+label {
+  font-weight: bold;
 }

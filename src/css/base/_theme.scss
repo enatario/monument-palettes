@@ -15,6 +15,15 @@ a {
   }
 }
 
-body > footer {
+body > header {
   background-color: var(--color--blush--darker);
+}
+
+body > footer {
+  border-top: 1px solid var(--color--blush--darker);
+}
+
+.color-selector {
+  background-color: var(--color--white);
+  border: 1px solid var(--color--blush--darker);
 }
