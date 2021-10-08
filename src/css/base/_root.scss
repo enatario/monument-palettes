@@ -1,0 +1,47 @@
+$bourbon: (
+  "global-font-file-formats": ("woff2"),
+);
+
+$dir-font: "/static/fonts/";
+
+$breakpoint: 35rem;
+
+:root {
+  --container--base: 70rem;
+
+  @each $name, $value in $color-sections {
+    --color--#{$name}: #{map-get($color-palette, $value)};
+  }
+
+  @each $name, $value in $spaces {
+    --space--#{$name}: #{$value};
+  }
+
+  @each $name, $value in $typefaces {
+    --font-family--#{$name}: #{$value}, #{$font-stack-system};
+  }
+
+  @each $name, $value in $type-weights {
+    --font-weight--#{$name}: #{$value};
+  }
+
+  @each $name, $value in $type-sizes {
+    $rem-size: (map-get($type-pixel-scale, $value) / 16) + rem;
+    --font-size--#{$name}: #{$rem-size};
+  }
+
+  @each $name, $value in $line-heights {
+    --line-height--#{$name}: #{$value};
+  }
+
+  @each $name, $value in $border-radii {
+    --border-radius--#{$name}: #{$value};
+  }
+
+  @each $name, $value in $border-widths {
+    --border-width--#{$name}: #{$value};
+    --border--#{$name}: #{$value} solid var(--color--border);
+  }
+
+  --transition-timing--base: 0.2s;
+}

@@ -1,3 +1,9 @@
+html {
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   display: grid;
   margin: 0 auto;
@@ -10,8 +16,8 @@ body {
 
 main {
   display: grid;
-  grid-row-gap: 2.5rem;
-  padding: 2.5rem;
+  grid-row-gap: var(--space--large);
+  padding: var(--space--large);
 
   @media screen and (min-width: #{$breakpoint}) {
     order: 2;
@@ -19,14 +25,20 @@ main {
 }
 
 body > header {
-  background-color: var(--color--white);
-  padding: 2.5rem;
+  padding: var(--space--base) var(--space--large);
   position: sticky;
 
   @media screen and (min-width: #{$breakpoint}) {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     order: 1;
+    padding: var(--space--large);
     top: 0;
+
+    > *:last-child {
+      margin-top: auto;
+    }
   }
 }
 
@@ -35,7 +47,7 @@ body > footer {
   grid-gap: var(--space--medium);
   grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
   order: 3;
-  padding: 2.5rem;
+  padding: var(--space--large);
   position: relative;
 
   @media screen and (min-width: #{$breakpoint}) {

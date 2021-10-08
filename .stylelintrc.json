@@ -1,3 +1,6 @@
 {
-  "extends": "@thoughtbot/stylelint-config"
+  "extends": "@thoughtbot/stylelint-config",
+  "rules": {
+    "scss/map-keys-quotes": null
+  }
 }

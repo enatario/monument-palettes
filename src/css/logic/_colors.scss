@@ -1,0 +1,21 @@
+$color-palette: (
+  white: #ffffff,
+  olive: #4b4b45,
+  blush-light: #f9f1ef,
+  blush-mid: #efe5e2,
+  blush-dark: #e5d4cf
+);
+
+$color-sections: (
+  text: olive,
+  focus-bg: olive,
+  focus-color: white,
+  main-bg: blush-light,
+  header-bg: blush-mid,
+  color-selector-bg: white,
+  color-selector-radio: blush-dark,
+  palette-bg: white,
+  palette-border: blush-mid,
+  palette-shadow: blush-dark,
+  border: blush-dark
+);

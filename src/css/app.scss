@@ -5,8 +5,14 @@
 // Dependencies
 @import "bourbon/core/bourbon";
 
+// Logic
+@import "logic/borders";
+@import "logic/colors";
+@import "logic/spaces";
+@import "logic/type";
+
 // Base Dependencies
-@import "base/variables";
+@import "base/root";
 @import "base/fonts";
 
 // Base

@@ -1,14 +1,17 @@
 .palette {
-  --color--box-shadow: var(--color--blush--darker);
+  --color-shadow: var(--color--palette-border);
 
-  background-color: var(--color--white);
+  background-color: var(--color--palette-bg);
   border-radius: var(--border-radius--base);
-  box-shadow: var(--space--small) var(--space--small) 0 0 var(--color--box-shadow);
+  box-shadow:
+    var(--space--small)
+    var(--space--small) 0 0
+    var(--color-shadow);
   overflow: hidden;
   transition: box-shadow 0.25s ease-in-out;
 
   &:hover {
-    --color--box-shadow: var(--color--blush--darkest);
+    --color-shadow: var(--color--palette-shadow);
   }
 }
 
@@ -23,18 +26,14 @@
 }
 
 .palette__value {
-  color: var(--color--olive);
-  font-size: 0.8rem;
-  font-weight: normal;
   margin: 0;
   padding: var(--space--small);
 
   span {
-    color: var(--color--olive--dark);
-    font-weight: bold;
+    font-weight: var(--font-weight--bold);
   }
 }
 
 .palette__item:not(:last-of-type) .palette__value {
-  border-bottom: 3px solid var(--color--blush--dark);
+  border-bottom: var(--border-width--base) solid var(--color--palette-border);
 }

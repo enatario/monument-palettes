@@ -1,6 +1,6 @@
 .chapter:not(:last-of-type) {
-  border-bottom: 1px solid var(--color--blush--darkest);
-  padding-bottom: 2.5rem;
+  border-bottom: var(--border--base);
+  padding-bottom: var(--space--large);
 }
 
 .chapter__header {

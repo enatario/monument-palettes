@@ -4,7 +4,8 @@ html {
 }
 
 body {
-  font-family: var(--font-family--base);
+  font-family: var(--font-family--primary);
+  font-size: var(--font-size--body);
   font-weight: var(--font-weight--normal);
   line-height: var(--line-height--base);
 }
@@ -16,30 +17,20 @@ h3 {
 }
 
 h1 {
-  font-size: 0.9rem;
+  font-size: var(--font-size--title);
 }
 
 h2 {
-  align-items: center;
-  display: grid;
-  font-size: 0.7rem;
-  font-weight: normal;
-  grid-gap: 1rem;
-  grid-template-columns: auto 1fr;
+  font-size: var(--font-size--eyebrow);
+  font-weight: var(--font-weight--normal);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 h3 {
-  font-size: 1.2rem;
-}
-
-p,
-legend,
-label, {
-  font-size: 0.8rem;
+  font-size: var(--font-size--section-header);
 }
 
 label {
-  font-weight: bold;
+  font-weight: var(--font-weight--bold);
 }

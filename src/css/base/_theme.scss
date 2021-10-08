@@ -1,29 +1,43 @@
 body {
-  background-color: var(--color--bg);
+  background-color: var(--color--main-bg);
   color: var(--color--text);
 }
 
 a {
   color: var(--color--text);
-  font-weight: bold;
-  text-decoration-color: var(--color--blush--darkest);
-  text-decoration-thickness: 2px;
+  font-weight: var(--font-weight--bold);
+  text-decoration-color: var(--color--text);
+  text-decoration-thickness: var(--border-width--base);
   transition: text-decoration-color var(--transition-timing--base) ease-in-out;
 
   &:hover {
-    text-decoration-color: var(--color--olive);
+    text-decoration-color: var(--color--border);
   }
 }
 
 body > header {
-  background-color: var(--color--blush--darker);
+  background-color: var(--color--header-bg);
 }
 
 body > footer {
-  border-top: 1px solid var(--color--blush--darker);
+  background-color: var(--color--main-bg);
+  border-top: var(--border--base);
+}
+
+[type="radio"]:checked+label::after {
+  background-color: var(--color--color-selector-radio);
+}
+
+*:focus {
+  background-color: var(--color--focus-bg);
+  color: var(--color--focus-color);
+}
+
+[type="radio"]:focus + label {
+  background-color: var(--color--main-bg);
 }
 
 .color-selector {
-  background-color: var(--color--white);
-  border: 1px solid var(--color--blush--darker);
+  background-color: var(--color--color-selector-bg);
+  border: var(--border--base);
 }
