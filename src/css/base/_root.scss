@@ -7,8 +7,6 @@ $dir-font: "/static/fonts/";
 $breakpoint: 35rem;
 
 :root {
-  --container--base: 70rem;
-
   @each $name, $value in $color-sections {
     --color--#{$name}: #{map-get($color-palette, $value)};
   }
