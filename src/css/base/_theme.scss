@@ -24,20 +24,20 @@ body > footer {
   border-top: var(--border--base);
 }
 
-[type="radio"]:checked+label::after {
-  background-color: var(--color--color-selector-radio);
-}
-
 *:focus {
   background-color: var(--color--focus-bg);
   color: var(--color--focus-color);
 }
 
-[type="radio"]:focus + label {
-  background-color: var(--color--main-bg);
-}
-
 .color-selector {
   background-color: var(--color--color-selector-bg);
   border: var(--border--base);
+}
+
+[type="radio"]:checked::before {
+  background-color: var(--color--color-selector-radio);
+}
+
+label:focus-within {
+  background-color: var(--color--main-bg);
 }

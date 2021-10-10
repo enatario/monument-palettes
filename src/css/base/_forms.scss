@@ -1,3 +1,8 @@
+*:focus {
+  border-radius: var(--border-radius--small);
+  outline: 0;
+}
+
 fieldset {
   border: 0;
   border-radius: var(--border-radius--base);
@@ -12,13 +17,9 @@ legend {
   @include hide-visually;
 }
 
-[type="radio"] {
-  @include hide-visually;
-}
-
-[type="radio"] + label {
+label {
   align-items: center;
-  border: 1px solid transparent;
+  border-radius: var(--border-radius--base);
   cursor: pointer;
   display: grid;
   grid-auto-columns: min-content auto;
@@ -26,34 +27,35 @@ legend {
   grid-gap: var(--space--x-small);
   justify-content: center;
   padding: var(--space--x-small);
+}
+
+[type="radio"] {
+  @include size(1.25rem);
+
+  appearance: none;
+  background-color: var(--color--color-selector-bg);
+  border: var(--border--base);
+  border-radius: var(--border-radius--circle);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+
+  &[disabled],
+  &[aria-disabled=true] {
+    opacity: 0.5;
+  }
 
   &::before {
-    border: 1px solid #c5b4af;
-  }
-
-  &::after {
-    transform: scale(0.5);
-  }
-
-  &::before,
-  &::after {
     @include size(1.25rem);
 
     background-color: transparent;
     border-radius: var(--border-radius--circle);
     content: "";
     display: block;
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    place-self: center;
+    transform: scale(0.5);
   }
-}
 
-*:focus {
-  border-radius: var(--border-radius--small);
-  outline: 0;
-}
-
-[type="radio"]:focus + label {
-  border-radius: var(--border-radius--small);
+  &:focus {
+    background-color: var(--color--color-selector-bg);
+  }
 }
