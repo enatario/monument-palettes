@@ -1,22 +1,8 @@
 <footer id="footer">
+  {% for section in footer %}
   <section>
-    <h2>Methodology</h2>
-    <p>Palettes were generated from individual images of each chapter level using <a href="https://lokeshdhakar.com/projects/color-thief/">Color Thief</a>. Changing the number of colors in the palette can result in variability in individual colors. 5 felt like a manageable set. You can view <a href="https://github.com/enatario/monument-palettes/blob/main/generate-palettes.js">the generator script on Github</a>.</p>
+    <h2>{{ section.header }}</h2>
+    <p>{{ section.content | safe }}</p>
   </section>
-  <section>
-    <h2>Chapter images</h2>
-    <p>Chapter images were not included on this site for performace reasons. Also, because I didn't feel like it. If you're curious about the source images, I encourage you to play the game. You can also peek into the <a href="https://github.com/enatario/monument-palettes/tree/main/source-images">source images on the repository</a>.</p>
-  </section>
-  <section>
-    <h2>Other palettes</h2>
-    <p>If you are a Monument Valley fanatic (or just a casual lover of the game), you are probably aware that there is a <a href="https://www.monumentvalleygame.com/mv2">Monument Valley II</a> as well as a few mini-games that have their own storylines, chapters, and thus palettes. I'm actively working on including the rest.</p>
-  </section>
-  <section>
-    <h2>Source Code</h2>
-    <p>Source code is available on <a href="https://github.com/enatario/monument-palettes">Github</a>. There's an extensive README if you'd like to set this up locally or if you'd like to use the code as a foundation for your own color palette generator. Please open issues there accordingly.</p>
-  </section>
-  <section>
-    <h2>Who made this?</h2>
-    <p><a href="https://twitter.com/elainanatario">Me!</a> 🎉. This little site is made using <a href="https://www.11ty.dev/">eleventy</a>. <a href="https://www.exljbris.com/museo.html">Museo</a> is the typeface (which is also used in the game itself).</p>
-  </section>
+  {% endfor %}
 </footer>
