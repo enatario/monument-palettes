@@ -30,9 +30,9 @@ label {
 }
 
 [type="radio"] {
+  @include prefixer(appearance, none, ("webkit", "moz"));
   @include size(1.25rem);
 
-  appearance: none;
   background-color: var(--color--color-selector-bg);
   border: var(--border--base);
   border-radius: var(--border-radius--circle);
