@@ -7,7 +7,7 @@ Color palettes from the [Monument Valley I] game.
 * Monument Valley II
 
 ## What's inside
-This project uses [colorthief] to generate palettes from a set of images. This site runs using [11ty] and [Netlify]. The base template uses my own [11ty scaffold], which you are welcome to use for your own projects.
+This project uses [colorthief] to generate palettes from a set of images. This site runs using [11ty] and [Netlify]. The base template uses my own [11ty scaffold], which you are welcome to use for your own projects. The typeface used is [Museo].
 
 ## Make your own palette site!
 The guts of this project are very much extendable for your own palette site. Here's what you need to know:
@@ -44,14 +44,19 @@ The guts of this project are very much extendable for your own palette site. Her
 * Change the loops and general architecture of the page in `./src/index.njk`
 * Change the overall styling of the page in `./src/css`
 
+## License
+[MIT License]
+
 [Monument Valley I]: https://www.monumentvalleygame.com/mv1
 [colorthief]: https://lokeshdhakar.com/projects/color-thief/
 [11ty]: https://www.11ty.dev/
 [Netlify]: https://www.netlify.com/
 [11ty scaffold]: https://github.com/enatario/eleventy-base
+[Museo]: https://www.exljbris.com/museo.html
 [Node]: https://nodejs.org/
 [SCSS]: https://sass-lang.com/
 [Nunjucks]: https://mozilla.github.io/nunjucks/
 [deploy instructions]: https://docs.netlify.com/cli/get-started/
 [colorthief API]: https://lokeshdhakar.com/projects/color-thief/#api
 [RegEx]: https://regexr.com/
+[MIT License]: LICENSE.md
