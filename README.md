@@ -1,5 +1,5 @@
 # Monument Palettes
-Color palettes from the [Monument Valley I] game.
+Color palettes from the [Monument Valley I] game. The site currently lives at [monumentpalettes.style].
 
 **Palettes coming soon:**
 * Forgotten Shores
@@ -48,6 +48,7 @@ The guts of this project are very much extendable for your own palette site. Her
 [MIT License]
 
 [Monument Valley I]: https://www.monumentvalleygame.com/mv1
+[monumentpalettes.style]: https://www.monumentpalettes.style/
 [colorthief]: https://lokeshdhakar.com/projects/color-thief/
 [11ty]: https://www.11ty.dev/
 [Netlify]: https://www.netlify.com/
