@@ -30,8 +30,10 @@ label {
 }
 
 [type="radio"] {
+  $_button_size: 1.25rem;
+
   @include prefixer(appearance, none, ("webkit", "moz"));
-  @include size(1.25rem);
+  @include size($_button_size);
 
   background-color: var(--color--color-selector-bg);
   border: var(--border--base);
@@ -46,7 +48,7 @@ label {
   }
 
   &::before {
-    @include size(1.25rem);
+    @include size($_button_size);
 
     background-color: transparent;
     border-radius: var(--border-radius--circle);
