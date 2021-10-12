@@ -26,6 +26,11 @@ The guts of this project are very much extendable for your own palette site. Her
 * Run `npm start`
 * View your project on`localhost:8080`
 
+### Build
+* Run `npm run build`
+* Your project files will be available in `dist`
+* The `netlify.toml` file provides [deploy instructions] if you'd like to publish to the web.
+
 ### Generate your own palettes
 * Delete all of the images from `./source-images/` and put in your own images
 * Run `node generate-palettes.js`
@@ -47,5 +52,6 @@ The guts of this project are very much extendable for your own palette site. Her
 [Node]: https://nodejs.org/
 [SCSS]: https://sass-lang.com/
 [Nunjucks]: https://mozilla.github.io/nunjucks/
+[deploy instructions]: https://docs.netlify.com/cli/get-started/
 [colorthief API]: https://lokeshdhakar.com/projects/color-thief/#api
 [RegEx]: https://regexr.com/
